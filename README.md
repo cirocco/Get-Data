@@ -1,7 +1,7 @@
 # Get-Data
 This is the final course project for the Getting and Cleaning Data Course at Johns Hopkins, via Coursera.
 
-Included here are the following:
+Included are the following:
 
 * an R script called run_analysis.R. The script performs the following actions:
 * it downloads the data from this site: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
