@@ -7,7 +7,7 @@ Included are the following:
 * it downloads the data from this site: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
   + it creates a new directory inside the current working directory
   + it unzips the data into the new directory
-  + it moves the current working directory into the new working directory
+  + it makes the new working directory the "current working directory"
 * a codebook called CodeBook.md that explains the variables, data and transformations performed in order to clean the data into
 * the dataset, entitled happydata.txt. This is a 180 x 66 set of data.
 
