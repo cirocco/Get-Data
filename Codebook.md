@@ -62,6 +62,8 @@ The cleaning portion of this script includes the following activities, after the
     * 4 = SITTING
     * 5 = STANDING
     * 6 = LAYING
+  7. Data was melted and then cast while taking the mean of each grouping.
+  8. Data was sorted by Subject and Activity for ease of reading. 
 
 ##Description of the variables in the happydata.txt file
 General description of the file including:
@@ -242,17 +244,13 @@ Frequency Body Means of Standard Deviations
 
 > $ freqBodyGyroJerkMagStandardDev: num  -0.382 -0.694 -0.392 -0.987 -0.995 ...
 
-
-
-##Notes Regarding Units of Measurement: 
+##Notes Regarding Units of Measurement in the data files: 
 ======
 
 - Features are normalized and bounded within [-1,1]. 
-- Each feature vector is a row on the 'X' and 'y' files. 
 - The units used for the accelerations (total and body) are 'g's (gravity of earth -> 9.80665 m/seg2). 
 - The gyroscope units are rad/seg. 
 - A video of the experiment including an example of the 6 recorded activities with one of the participants can be seen in the following link: [http://www.youtube.com/watch?v=XOEN9W05_4A] 
-
 
 ##Sources
 This codebook was modeled on that provided here: _https://gist.github.com/JorisSchut/dbc1fc0402f28cad9b41_
