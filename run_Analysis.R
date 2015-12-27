@@ -20,15 +20,21 @@ if (file.exists("features.txt")==TRUE) {
   cat("..Yay! The files are already here.\n")
 } else {
     # zip file hasn't been unzipped, unzip it, and go into it.    
-    if (dir.exists("UCI HAR Dataset")==FALSE) {
-      # It just hasn't been unzipped.
-      cat("..Unzipping the UCI_HAR_Dataset, and making that the working directory.\n")
-      unzip("UCI_HAR_Dataset.zip")
+    if (dir.exists("UCI HAR Dataset")==TRUE) {
       setwd("UCI HAR Dataset")
     } else {
-        # zip file hasn't been downloaded - go get it.
-        if (file.exists("UCI_HAR_Dataset.zip")==FALSE) {
-          download.file("https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip", "UCI_HAR_Dataset.zip", mode="wb")
+        if (file.exists("UCI_HAR_Dataset.zip")==TRUE) {
+        # It just hasn't been unzipped.
+          cat("..Unzipping the UCI_HAR_Dataset, and making that the working directory.\n")
+          unzip("UCI_HAR_Dataset.zip")
+          setwd("UCI HAR Dataset")
+        } else {
+            # zip file hasn't been downloaded - go get it.
+            if (file.exists("UCI_HAR_Dataset.zip")==FALSE) {
+              download.file("https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip", "UCI_HAR_Dataset.zip", mode="wb")
+              unzip("UCI_HAR_Dataset.zip")
+              setwd("UCI HAR Dataset")
+            }
         }
     }
 }
@@ -116,7 +122,7 @@ finalSetCast$Subject <- as.numeric(finalSetCast$Subject)
 final <- arrange(finalSetCast, Subject, Activity)
 
 cat("..Outputting the file to \"happydata.txt\". Enjoy.\n")
-write.table(final, file="happydata.txt", row.name=FALSE)
+write.table(final, file="../happydata.txt", row.name=FALSE)
 
 rm(finalSet, finalSetMelt, finalSetCast)
 }
