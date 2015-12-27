@@ -243,5 +243,26 @@ Frequency Body Means of Standard Deviations
 > $ freqBodyGyroJerkMagStandardDev: num  -0.382 -0.694 -0.392 -0.987 -0.995 ...
 
 
+
+##Notes Regarding Units of Measurement: 
+======
+
+- Features are normalized and bounded within [-1,1]. 
+- Each feature vector is a row on the 'X' and 'y' files. 
+- The units used for the accelerations (total and body) are 'g's (gravity of earth -> 9.80665 m/seg2). 
+- The gyroscope units are rad/seg. 
+- A video of the experiment including an example of the 6 recorded activities with one of the participants can be seen in the following link: [http://www.youtube.com/watch?v=XOEN9W05_4A] 
+
+
 ##Sources
 This codebook was modeled on that provided here: _https://gist.github.com/JorisSchut/dbc1fc0402f28cad9b41_
+
+##License:
+========
+Use of this dataset in publications must be acknowledged by referencing the following publication [1] 
+
+[1] Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz. Human Activity Recognition on Smartphones using a Multiclass Hardware-Friendly Support Vector Machine. International Workshop of Ambient Assisted Living (IWAAL 2012). Vitoria-Gasteiz, Spain. Dec 2012
+
+This dataset is distributed AS-IS and no responsibility implied or explicit can be addressed to the authors or their institutions for its use or misuse. Any commercial use is prohibited.
+
+Jorge L. Reyes-Ortiz, Alessandro Ghio, Luca Oneto, Davide Anguita. November 2012.
