@@ -3,7 +3,7 @@ title: "Codebook for Getting and Cleaning Data Project"
 author: "Tiby Kantrowitz"
 date: "27 December, 2015"
 output:
-  text_file: https://github.com/cirocco/Get-Data/blob/master/happydata.txt
+  text_file: happydata.txt
     keep_md: yes
 ---
 
