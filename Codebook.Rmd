@@ -62,6 +62,8 @@ The cleaning portion of this script includes the following activities, after the
     * 4 = SITTING
     * 5 = STANDING
     * 6 = LAYING
+  7. The data for each Subject, each Activity and each of the measurements kept was summarized by taking the mean for each relevant grouping.
+  8. The final table presents the data according to the principles of tidiness.
 
 ##Description of the variables in the happydata.txt file
 General description of the file including:
