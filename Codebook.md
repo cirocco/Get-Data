@@ -68,7 +68,7 @@ General description of the file including:
  - Dimensions of the dataset : A data.frame of 180 obs. of 68 variables.
  - Summary of the data: 30 subjects, 6 Activities, and 66 measurements. The data presents the mean of the raw measurements taken for each measurement type, for each activity as performed by each subject.
  - The total variables included are the following:
-> [1] "Subject"                        "Activity"                       "timeBodyAccMeanX"              
+ [1] "Subject"                        "Activity"                       "timeBodyAccMeanX"              
  [4] "timeBodyAccMeanY"               "timeBodyAccMeanZ"               "timeGravityAccMeanX"           
  [7] "timeGravityAccMeanY"            "timeGravityAccMeanZ"            "timeBodyAccJerkMeanX"          
 [10] "timeBodyAccJerkMeanY"           "timeBodyAccJerkMeanZ"           "timeBodyGyroMeanX"             
@@ -93,7 +93,7 @@ General description of the file including:
 [67] "freqBodyGyroMagStandardDev"     "freqBodyGyroJerkMagStandardDev"
 
 ###Variables
-> $ Subject                       : int  1 1 1 1 1 1 2 2 2 2 ...
+ $ Subject                       : int  1 1 1 1 1 1 2 2 2 2 ...
  $ Activity                      : Factor w/ 6 levels "LAYING","SITTING",..: 4 6 5 2 3 1 4 6 5 2 ...
  $ timeBodyAccMeanX              : num  0.277 0.255 0.289 0.261 0.279 ...
  $ timeBodyAccMeanY              : num  -0.01738 -0.02395 -0.00992 -0.00131 -0.01614 ...
