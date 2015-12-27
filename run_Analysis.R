@@ -15,33 +15,48 @@
 
 run_analysis <- function() {
   
-if (file.exists("UCI_HAR_Dataset.zip")==FALSE) {
-  download.file("https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip", "UCI_HAR_Dataset.zip", mode="wb")
+# check if files have been unzipped, etc.
+if (file.exists("features.txt")==TRUE) {
+  cat("..Yay! The files are already here.\n")
+} else {
+    # zip file hasn't been unzipped, unzip it, and go into it.    
+    if (dir.exists("UCI HAR Dataset")==FALSE) {
+      # It just hasn't been unzipped.
+      cat("..Unzipping the UCI_HAR_Dataset, and making that the working directory.\n")
+      unzip("UCI_HAR_Dataset.zip")
+      setwd("UCI HAR Dataset")
+    } else {
+        # zip file hasn't been downloaded - go get it.
+        if (file.exists("UCI_HAR_Dataset.zip")==FALSE) {
+          download.file("https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip", "UCI_HAR_Dataset.zip", mode="wb")
+        }
+    }
 }
 
-# Once file has been downloaded:
-unzip("UCI_HAR_Dataset.zip")
-setwd("UCI HAR Dataset")
-    
+# Assumes we're now in the right directory, and all's there.   
 # get the variable names
 features <- read.table("features.txt")
 features1 <- features[,2]
 rm(features) #cleanup
+cat("..Got the variable names.\n")
 
 # Load and create big training set.
+cat("..Getting the training set of data.\n")
 trainData <- read.table("train/X_train.txt")
 names(trainData) <- features1
 
 # load big test set
+cat("..Getting the testing set of data.\n")
 testData<- read.table("test/X_test.txt")
 names(testData) <- features1
 
 # merge big data sets
+cat("..Merging the sets.\n")
 bigSet <- rbind(trainData,testData)
 rm(trainData,testData) #cleanup
 
 # toss the ones we don't need
-
+cat("..Loading the necessary libraries.\n")
 library(stringi) # Here for "melt" purposes in data.table. Go figure.
 library(data.table)
 library(plyr)    #Note: load dplyr AFTER plyr, or it causes problems. Here for mapvalues()
@@ -55,6 +70,7 @@ rm(meanSet, stdSet, bigSet) #cleanup
 # Fix the names. Tried to "%>%" using library(magrittR) etc., but it didn't work. Brute force, instead.
 # Try again to pipe it, later, if there's left over time.
 # delete  "-", (), t to time, f to frequency. Write out STD more. Google R naming convention. Here: https://google.github.io/styleguide/Rguide.xml
+cat("..Making the names nicer.\n")
 nameSet <- names(finalSet)
 nameSet <- gsub("^t", "time", nameSet) 
 nameSet <- gsub("^f", "freq", nameSet) 
@@ -66,6 +82,7 @@ names(finalSet) <- nameSet
 rm(features1, nameSet)
            
 # load training Subjects/Activities
+cat("..Loading the Subjects/Activities.\n")
 trainSubs <- read.table("train/subject_train.txt", colClasses="factor", col.names="Subject")
 trainActs <- read.table("train/y_train.txt", colClasses="factor", col.names="Activity")
 trainSubsActs <- cbind(trainSubs,trainActs)
@@ -87,16 +104,18 @@ levels(subsActs$Activity) <- acts$Activity
 rm(trainSubsActs,testSubsActs, acts) #cleanup
 
 # Add the subjects/activities to the large data set
-
+cat("..Combining all the Things.\n")
 finalSet <- cbind(subsActs,finalSet)
 rm(subsActs) #cleanup
 
 # Manipulate the data
+cat("..Tidying the data.\n")
 finalSetMelt <- melt(finalSet, id=1:2)
 finalSetCast <- dcast(finalSetMelt, Subject + Activity ~ variable, fun.aggregate = mean)
 finalSetCast$Subject <- as.numeric(finalSetCast$Subject)
 final <- arrange(finalSetCast, Subject, Activity)
 
+cat("..Outputting the file to \"happydata.txt\". Enjoy.\n")
 write.table(final, file="happydata.txt", row.name=FALSE)
 
 rm(finalSet, finalSetMelt, finalSetCast)
