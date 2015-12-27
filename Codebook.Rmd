@@ -14,12 +14,12 @@ Overall, the data describes a broad collection of measurements. However, the scr
 
 ##Study design and data processing
 Thirty (30) volunteers aged between 19-48 were individually asked to wear the phone while performing the following activities:
-  *a) Walking
-  *b) Walking_Upstairs
-  *c) Walking_Downstairs
-  *d) Sitting
-  *e) Standing
-  *f) Laying
+  * a) Walking
+  * b) Walking_Upstairs
+  * c) Walking_Downstairs
+  * d) Sitting
+  * e) Standing
+  * f) Laying
 Measurements were obtained via the phone's accelerometer and gyroscope for 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz, and were labeled manually using the video recorded of the subjects' performance of the activities to verify the actions.
 
 Of the set obtained, seventy percent (70%) was randomly separated into the training data, and thirty percent (30%) were separated into the test data.
