@@ -10,5 +10,4 @@ Included are the following:
   + **note:** it unzips the data into a new directory
   + it makes the new working directory the "current working directory"
 * it creates a codebook called CodeBook.md that explains the variables, data and transformations performed in order to clean the data into
-<<<<<<< HEAD
 * the dataset, entitled **happydata.txt**. This is a 180 x 68 tidy set of data. This file is located in the directory that is current after the script has been run.
