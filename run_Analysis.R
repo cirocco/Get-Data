@@ -11,8 +11,6 @@
 # dataset came from here: http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
 # dataset is here: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 
-# This is a tester line as of 7:44pm, 12/26.
-
 run_analysis <- function() {
   
 melte
