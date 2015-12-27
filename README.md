@@ -10,3 +10,5 @@ Included are the following:
     + it makes the new working directory the "current working directory"
 * This repository also contains a codebook called **CodeBook.md** that explains the variables, data and transformations performed in order to clean the data into
 * the dataset, entitled **happydata.txt**. This is a 180 x 68 tidy set of data. This file is located in the directory that is current after the script has been run.
+
+**Read data file ("happydata.txt") using read.table("happydata.txt", header=TRUE)**
