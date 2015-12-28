@@ -13,7 +13,6 @@
 
 run_analysis <- function() {
   
-melte
 # Assumes we're now in the right directory, and all's there.   
 # get the variable names
 features <- read.table("features.txt")
